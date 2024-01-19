@@ -1,0 +1,12 @@
+{
+  "name": "typescript-coding-practice",
+  "version": "1.0.0",
+  "description": "Repository for TypeScript coding practice based on Adam Freeman's \"Essential TypeScript 5 Third Edition\" book and challenges from HackerRank",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
