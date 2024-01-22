@@ -7,14 +7,17 @@ let todos : TodoItem[] = [
     new TodoItem(3, "Collect Tickets"), new TodoItem(4, "Call Joe", true)];
 
 let collection : TodoCollection = new TodoCollection("Maciek", todos);
+let showCompleted = true;
 
 function displayTodoList(): void {
     console.log(`${collection.userName}' Todo List ` + ` (${collection.getItemCounts().incomplete } items to do)`);
-    collection.getTodoItems(true).forEach(item => item.printDetails());
+    // collection.getTodoItems(true).forEach(item => item.printDetails());
+    collection.getTodoItems(showCompleted).forEach(item => item.printDetails());
 }
 
 enum Commands {
-    Quit = "Quit"
+    Quit = "Quit",
+    Toogle = "Show/Hide Completed"
 }
 
 function promptUser(): void {
@@ -27,8 +30,11 @@ function promptUser(): void {
         choices: Object.values(Commands),
         // badProperty: true    // for testing declaration file
     }).then(answers => {
-        if(answers["command"] !== Commands.Quit) {
-            promptUser();
+        switch(answers["command"]) {
+            case Commands.Toogle:
+                showCompleted = !showCompleted;
+                promptUser();
+                break;
         }
     })
 }
