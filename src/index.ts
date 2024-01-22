@@ -14,4 +14,5 @@ console.log(`${collection.userName}'s Todo List`);
 // let todoItem : TodoItem = collection.getTodoById(newId);
 // todoItem.printDetails();
 // collection.addTodo(todoItem);   // Argument of type 'TodoItem' is not assignable to parameter of type 'string'.ts(2345)
+collection.removeComplete();
 collection.getTodoItems(true).forEach(item => item.printDetails());
