@@ -28,3 +28,16 @@ console.log(`Type of null: ${typeof null}`);
 let firstCity;
 let secondCity = firstCity || "London";
 console.log(`City: ${secondCity}`);
+
+let taxRate;    // no tax rate has been defined
+console.log(`Tax rate: ${taxRate ?? 10}%`);
+taxRate = 0;
+console.log(`Tax rate: ${taxRate ?? 20}%`);
+taxRate = "";
+console.log(`Tax rate: ${taxRate ?? 30}%`);
+taxRate = NaN;
+console.log(`Tax rate: ${taxRate ?? 40}%`);
+taxRate = undefined;
+console.log(`Tax rate: ${taxRate ?? 50}%`);
+taxRate = null;
+console.log(`Tax rate: ${taxRate ?? 60}%`);
