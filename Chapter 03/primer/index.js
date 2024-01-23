@@ -24,3 +24,7 @@ This is a long-standing behavior that dates back to the earliest days of JavaScr
 been changed because so much code has been written that expects this behavior.
 */
 console.log(`Type of null: ${typeof null}`);
+
+let firstCity;
+let secondCity = firstCity || "London";
+console.log(`City: ${secondCity}`);
