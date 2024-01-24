@@ -4,6 +4,9 @@ let bootsPrice = "100";
 console.log(`Boots price: ${bootsPrice}`);
 
 let names = ["Hat", "Boots", "Gloves"];
+let [one, two] = names;
+console.log(`One: ${one}, Two: ${two}`);
+
 let prices = [];
 
 prices.push(100);
