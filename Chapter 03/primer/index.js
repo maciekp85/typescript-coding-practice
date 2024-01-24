@@ -3,10 +3,8 @@ console.log(`Hat price: ${hatPrice}`);
 let bootsPrice = "100";
 console.log(`Boots price: ${bootsPrice}`);
 
-function sumPricess(...numbers) {
-    return numbers.reduce((total, val) => 
-        total + (Number.isNaN(Number(val)) ? 0 : Number(val)));
-}
+let sumPricess = (...numbers) => numbers.reduce((total, value) => 
+    total + (Number.isNaN(Number(value)) ? 0 : Number(value)));
 
 let totalPrice = sumPricess(hatPrice, bootsPrice);
 console.log(`Total Price: ${totalPrice} ${typeof totalPrice}`);
