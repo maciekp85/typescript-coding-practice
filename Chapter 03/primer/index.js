@@ -17,3 +17,7 @@ let sumPricess = (...numbers) => numbers.reduce((total, value) =>
 
 let totalPrice = sumPricess(...prices);
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+
+let combinedArray = [...names, ...prices];
+combinedArray.forEach(element => 
+    console.log(`Combined Array Element: ${element}`));
