@@ -3,8 +3,10 @@ console.log(`Hat price: ${hatPrice}`);
 let bootsPrice = "100";
 console.log(`Boots price: ${bootsPrice}`);
 
-function sumPricess(first, second, third = 0) {
-    return first + second + third;
+function sumPricess(...numbers) {
+    return numbers.reduce(function(total, val) {
+        return total + val;
+    }, 0);
 }
 
 let totalPrice = sumPricess(hatPrice, bootsPrice);
