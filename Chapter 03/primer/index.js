@@ -8,4 +8,10 @@ function sumPricess(first, second, third) {
 }
 
 let totalPrice = sumPricess(hatPrice, bootsPrice);
-console.log(`Total Price: ${totalPrice}`);
+console.log(`Total Price: ${totalPrice} ${typeof totalPrice}`);
+
+totalPrice = sumPricess(100, 200, 300);
+console.log(`Total price: ${totalPrice} ${typeof totalPrice}`);
+
+totalPrice = sumPricess(100, 200);
+console.log(`Total price: ${totalPrice} ${typeof totalPrice}`);
