@@ -23,6 +23,15 @@ let boots = {
     price: "100"
 };
 
+let additionalProperties = {...hat, discounted: true};
+console.log(`Additional: ${JSON.stringify(additionalProperties)}`);
+
+let replacedProperties = {...hat, price: 10};
+console.log(`Replaced: ${JSON.stringify(replacedProperties)}`);
+
+let { price , ...someProperties } = hat;
+console.log(`Selected: ${JSON.stringify(someProperties)}`);
+
 let otherHat = {...hat};
 console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
 
