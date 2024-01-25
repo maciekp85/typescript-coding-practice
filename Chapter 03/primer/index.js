@@ -13,12 +13,18 @@ highest.forEach(price => console.log(`High price: ${price}`));
 
 console.log(`First Item: ${names[0]}: ${prices[0]}`);
 
-let sumPricess = (...numbers) => numbers.reduce((total, value) => 
-    total + (Number.isNaN(Number(value)) ? 0 : Number(value)));
+let hat = {
+    name: "Hat",
+    price: 100
+};
 
-let totalPrice = sumPricess(...prices);
-console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+let boots = {
+    name: "Boots",
+    price: "100"
+};
 
-let combinedArray = [...names, ...prices];
-combinedArray.forEach(element => 
-    console.log(`Combined Array Element: ${element}`));
+let sumPrices = (...numbers) => numbers.reduce((total, val) =>
+    total + (Number.isNaN(Number(val)) ? 0 : Number(val)));
+
+let totalPrice = sumPrices(hat.price, boots.price);
+console.log(`Total: ${totalPrice}`);
