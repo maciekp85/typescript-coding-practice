@@ -32,3 +32,11 @@ hat.writeDetails();
 console.log(`Boots: ${boots.price}, ${boots.priceIncTax}`);
 boots.price = "120";
 console.log(`Boots: ${boots.price}, ${boots.priceIncTax}`);
+
+function writeMessage(message) {
+    console.log(`${this.greeting}, ${message}`);
+}
+
+greeting = "Hello";
+writeMessage("It is sunny today");
+writeMessage.call(global, "It is sunny today");
