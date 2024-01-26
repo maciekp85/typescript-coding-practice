@@ -46,6 +46,10 @@ let myObject = {
 
     writeMessage(message) {
         console.log(`${this.greeting}, ${message}`);
+    },
+
+    getWriter() {
+        return (message) => console.log(`${this.greeting}, ${message}`);
     }
 }
 
@@ -58,3 +62,10 @@ myObject.writeMessage.call(myObject, "It is sunny day 2");
 
 let myFunction = myObject.writeMessage;
 myFunction("It is sunny day 2");
+
+let writer = myObject.getWriter();
+writer("It is raining today");
+
+let standAlone = myObject.getWriter;
+let standAloneWriter = standAlone();
+standAloneWriter("It is sunny day");
