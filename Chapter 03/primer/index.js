@@ -53,3 +53,6 @@ greeting = "Hello";
 
 myObject.writeMessage("It is sunny day");
 myObject.writeMessage.call(myObject, "It is sunny day");
+
+let myFunction = myObject.writeMessage;
+myFunction("It is sunny day");
