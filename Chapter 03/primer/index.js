@@ -40,3 +40,16 @@ function writeMessage(message) {
 greeting = "Hello";
 writeMessage("It is sunny today");
 writeMessage.call(global, "It is sunny today");
+
+let myObject = {
+    greeting: "Hi, there",
+
+    writeMessage(message) {
+        console.log(`${this.greeting}, ${message}`);
+    }
+}
+
+greeting = "Hello";
+
+myObject.writeMessage("It is sunny day");
+myObject.writeMessage.call(myObject, "It is sunny day");
