@@ -9,28 +9,38 @@ class Product {
     }
 }
 
-class TaxedProduct extends Product {
-    constructor(name, price, taxRate = 1.2) {
-        super(name, price);
-        this.taxRate = taxRate;
-    }
+function createProductIterator() {
+    const hat = new Product("Hat", 100);
+    const boots = new Product("Boots", 100);
+    const umbrella = new Product("Umbrella", 23);
 
-    getPriceIncTax() {
-        return Number(this.price) * this.taxRate;
-    }
+    let lastVal;
 
-    toString() {
-        let chainResult = super.toString();
-        return `${chainResult}, Tax: ${this.#getDetail()}`;
-    }
-    
-    static process(...products) {
-        products.forEach(p => console.log(p.toString()));
-    }
-
-    #getDetail() {
-        return `Tax: ${this.getPriceIncTax()}`;
+    return {
+        next() {
+            switch(lastVal) {
+                case undefined: {
+                    lastVal = hat;
+                    return { value: hat, done: false };
+                }
+                case hat: {
+                    lastVal = boots;
+                    return { value: boots, done: false };
+                }
+                case boots: {
+                    lastVal = umbrella;
+                    return { value: umbrella, done: false }
+                }
+                case umbrella:
+                    return { value: undefined, done: true };
+            }
+        }
     }
 }
 
-TaxedProduct.process(new TaxedProduct("Hat", 100), new TaxedProduct("Boots", 100));
+let iterator = createProductIterator();
+let result = iterator.next();
+while (!result.done) {
+    console.log(result.value.toString());
+    result = iterator.next();
+}
