@@ -21,11 +21,15 @@ class TaxedProduct extends Product {
 
     toString() {
         let chainResult = super.toString();
-        return `${chainResult}, Tax: ${this.getPriceIncTax()}`;
+        return `${chainResult}, Tax: ${this.#getDetail()}`;
     }
     
     static process(...products) {
         products.forEach(p => console.log(p.toString()));
+    }
+
+    #getDetail() {
+        return `Tax: ${this.getPriceIncTax()}`;
     }
 }
 
