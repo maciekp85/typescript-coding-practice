@@ -27,3 +27,7 @@ let boots = new Product("Boots", 120);
 
 console.log(hat.toTaxString());
 console.log(boots.toString());
+console.log(`hat and TaxedProduct: ${ hat instanceof TaxedProduct}`);
+console.log(`hat and Product: ${ hat instanceof Product}`);
+console.log(`boots and TaxedProduct: ${ boots instanceof TaxedProduct}`);
+console.log(`boots and Product: ${ boots instanceof Product}`);
