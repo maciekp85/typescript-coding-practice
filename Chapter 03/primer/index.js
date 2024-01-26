@@ -37,9 +37,9 @@ function writeMessage(message) {
     console.log(`${this.greeting}, ${message}`);
 }
 
-greeting = "Hello";
-writeMessage("It is sunny today");
-writeMessage.call(global, "It is sunny today");
+greeting = "Hello 1";
+writeMessage("It is sunny today 1");
+writeMessage.call(global, "It is sunny today 1");
 
 let myObject = {
     greeting: "Hi, there",
@@ -49,10 +49,12 @@ let myObject = {
     }
 }
 
-greeting = "Hello";
+myObject.writeMessage = myObject.writeMessage.bind(myObject);
 
-myObject.writeMessage("It is sunny day");
-myObject.writeMessage.call(myObject, "It is sunny day");
+greeting = "Hello 2";
+
+myObject.writeMessage("It is sunny day 2");
+myObject.writeMessage.call(myObject, "It is sunny day 2");
 
 let myFunction = myObject.writeMessage;
-myFunction("It is sunny day");
+myFunction("It is sunny day 2");
