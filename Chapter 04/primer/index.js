@@ -7,6 +7,11 @@ Product.prototype.toString = function() {
     return `toString: Name: ${this.name}, Price: ${this.price}`;
 }
 
+Product.process = (...products) => 
+    products.forEach(p => console.log(p.toString()));
+
+Product.process(new Product("Hat", 100, 1.2), new Product("Boots", 100));
+
 let TaxedProduct = function(name, price, taxRate) {
     Product.call(this, name, price);
     this.taxRate = taxRate;
@@ -25,8 +30,8 @@ TaxedProduct.prototype.toTaxString = function() {
 let hat = new TaxedProduct("Hat", 100, 1.2);
 let boots = new Product("Boots", 120);
 
-console.log(hat.toTaxString());
-console.log(boots.toString());
+// console.log(hat.toTaxString());
+// console.log(boots.toString());
 console.log(`hat and TaxedProduct: ${ hat instanceof TaxedProduct}`);
 console.log(`hat and Product: ${ hat instanceof Product}`);
 console.log(`boots and TaxedProduct: ${ boots instanceof TaxedProduct}`);
