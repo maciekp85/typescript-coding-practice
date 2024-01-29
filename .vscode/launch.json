@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chapter 06",
+            "program": "${workspaceFolder}/Chapter 06/tools/dist/index.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
             "name": "Launch Chapter 04",
             "program": "${workspaceFolder}\\Chapter 04\\primer\\index.js",
             "request": "launch",
