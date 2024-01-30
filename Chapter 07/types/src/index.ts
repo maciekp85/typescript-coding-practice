@@ -3,5 +3,8 @@ function calculateTax(amount: number, format: boolean): string | number {
     return format ? `$${calcAmount.toFixed(2)}` : calcAmount;
 }
 
-let taxNumber = calculateTax(100, false);
-let taxString = calculateTax(100, true);
+let taxNumber : string | number = calculateTax(100, false);
+let taxString : string | number = calculateTax(100, true);
+
+console.log(`Number Value: ${taxNumber.toFixed(2)}`);
+console.log(`String value: ${taxString.charAt(0)}`);
