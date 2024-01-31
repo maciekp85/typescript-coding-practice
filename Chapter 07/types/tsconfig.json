@@ -5,6 +5,7 @@
         "rootDir": "./src",
         "sourceMap": true,
         "declaration": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "strictNullChecks": true
     }
 }
