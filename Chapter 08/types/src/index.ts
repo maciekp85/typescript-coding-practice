@@ -2,5 +2,8 @@ function calculateTax(amount: number, discount: number = 0, ...extraFees: number
     return (amount * 1.2) - discount + extraFees.reduce((total, val) => total += val, 0);
 }
 
-let taxValue = calculateTax(100, 0);
-console.log(`Tax Value: ${taxValue}`);
+function writeValues(label: string, value: number): void {
+    console.log(`${label}: ${value}`);
+}
+
+writeValues("Tax value", calculateTax(100, 0));
