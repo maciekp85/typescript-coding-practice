@@ -14,4 +14,7 @@ switch(typeof taxValue) {
         console.log(`String Value: ${taxValue.charAt(0)}`);
         break;
     }
+    default:
+        let value: never = taxValue;
+        console.log(`Unexpected type for value: ${value}`);
 }
