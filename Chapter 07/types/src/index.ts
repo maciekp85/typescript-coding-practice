@@ -1,9 +1,11 @@
 function calculateTax(amount: number, format: boolean): string | number {
+    if (amount === 0) {
+        return null;
+    }
     const calcAmount = amount * 1.2;
     return format ? `$${calcAmount.toFixed(2)}` : calcAmount;
 }
-
-let taxValue = calculateTax(100, false);
+let taxValue: string | number = calculateTax(0, false);
 
 switch(typeof taxValue) {
     case "number": {
