@@ -5,11 +5,12 @@ function calculatePrice(quantity: 1 | 2, price: number): number {
 let total = calculatePrice(2, 19.99);
 console.log(`Price: ${total}`);
 
-function getRandomValue(): 1 | 2 | 3 | 4 {
-    return Math.floor(Math.random() * 4) + 1 as 1 | 2 | 3 | 4;
-}
+type numVals = 1 | 2 | 3 | 4;
 
-function getCityString(city: "London" | "Paris" | "Chicago"): `City: ${"London" | "Paris" | "Chicago"}` {
+type cities = "London" | "Paris" | "Chicago";
+type cityResponse = `City: ${ cities }`;
+
+function getCityString(city: cities): cityResponse {
     return `City: ${city}`;
 }
 
