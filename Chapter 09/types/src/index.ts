@@ -11,3 +11,11 @@ let gloves: [string, number] = ["Gloves", 75];
 
 writePrice(hat[0], hat[1]);
 writePrice(gloves[0], gloves[1]);
+
+hat.forEach((h: string | number) => {
+    if (typeof h === "string") {
+        console.log(`String: ${h}`);
+    } else {
+        console.log(`Number: ${h.toFixed(2)}`);
+    }
+})
