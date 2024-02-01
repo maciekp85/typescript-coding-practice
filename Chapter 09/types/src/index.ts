@@ -9,9 +9,12 @@ function writePrice(product: string, price: number): void {
 enum OtherEnum { First = 10, Two = 20 }
 enum Product { Hat = OtherEnum.First + 1, Gloves = 20, Umbrella = Hat + Gloves }
 
-let productValue: Product = 11;
-let productName: string = Product[productValue];
-console.log(`Value: ${productValue}, Name: ${productName}`);
+let productValue: Product = Product.Hat;
+if (typeof productValue === "number") {
+    console.log("Value is a number");
+}
 
-enum City { London = "London", Paris = "Paris", NY = "New York" };
-console.log(`City: ${City.London}`);
+let unionValue: number | Product = Product.Hat;
+if (typeof unionValue === "number") {
+    console.log("Value is a number");
+}
