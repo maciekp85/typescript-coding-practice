@@ -12,3 +12,6 @@ enum Product { Hat = OtherEnum.First + 1, Gloves = 20, Umbrella = Hat + Gloves }
 let productValue: Product = 11;
 let productName: string = Product[productValue];
 console.log(`Value: ${productValue}, Name: ${productName}`);
+
+enum City { London = "London", Paris = "Paris", NY = "New York" };
+console.log(`City: ${City.London}`);
