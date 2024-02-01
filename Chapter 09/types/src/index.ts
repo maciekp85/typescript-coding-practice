@@ -8,6 +8,6 @@ function writePrice(product: string, price: number): void {
 
 enum Product { Hat, Gloves, Umbrella }
 
-[Product.Hat, Product.Gloves, Product.Umbrella].forEach(val => {
-    console.log(`Number value: ${val}`);
-})
+let productValue: Product = 0;
+let productName: string = Product[productValue];
+console.log(`Value: ${productValue}, Name: ${productName}`);
