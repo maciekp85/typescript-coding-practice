@@ -23,4 +23,4 @@ class Employee {
 }
 
 let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
-console.log(`Dept value: ${salesEmployee.dept}`);
+salesEmployee.writeDept();
