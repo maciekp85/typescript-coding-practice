@@ -5,10 +5,10 @@ type Person = {
 };
 
 class Employee {
-    id: string;
-    name: string;
-    dept: string;
-    city: string;
+   public id: string;
+    public name: string;
+    private dept: string;
+    public city: string;
 
     constructor(id: string, name: string, dept: string, city: string) {
         this.id = id;
@@ -23,19 +23,4 @@ class Employee {
 }
 
 let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
-
-
-let data: (Person | Employee)[] = [
-    { id: "bsmith", name: "Bob Smith", city: "London"},
-    { id: "ajones", name: "Alice Jones", city: "Paris"},
-    { id: "dpeters", name: "Dora Peters", city: "New York"},
-    salesEmployee
-];
-
-data.forEach(item => {
-    if (item instanceof Employee) {
-        item.writeDept();
-    } else {
-        console.log(`${item.id} ${item.name}, ${item.city}`);
-    }
-})
+console.log(`Dept value: ${salesEmployee.dept}`);
