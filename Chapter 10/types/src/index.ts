@@ -23,4 +23,4 @@ let products: {
 }[] = [hat, gloves, umbrella];
 
 products.forEach(prod => console.log(`${prod.name}: ${prod.price} ` + 
-    `Waterproof: ${ prod.hasFeature(Feature.Waterproof)}`));
+    `Waterproof: ${ prod.hasFeature ? prod.hasFeature(Feature.Waterproof) : "false" }`));
