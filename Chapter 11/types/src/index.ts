@@ -6,15 +6,28 @@ type Person = {
 
 class Employee {
 
-    constructor(public readonly id: string, public name: string, private dept: string, public city: string) {
+    private city: string;
+
+    constructor(public readonly id: string, public name: string, private dept: string, city: string) {
         // no statements required
+        this.city = city;
     }
 
     writeDept(): void {
         console.log(`${this.name} works in ${this.dept}`);
     }
+
+    get location() {
+        return this.city;
+    }
+
+    set location(newCity) {
+        this.city = newCity;
+    }
 }
 
 let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
 salesEmployee.writeDept();
-// salesEmployee.id = "fidel";
+console.log(`Location: ${salesEmployee.location}`);
+salesEmployee.location = "London";
+console.log(`Location: ${salesEmployee.location}`);
