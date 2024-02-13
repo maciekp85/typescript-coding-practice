@@ -5,7 +5,7 @@ type Person = {
 };
 
 class Employee {
-   public id: string;
+   public readonly id: string;
     public name: string;
     #dept: string;
     public city: string;
@@ -24,3 +24,4 @@ class Employee {
 
 let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
 salesEmployee.writeDept();
+salesEmployee.id = "fidel";
