@@ -5,6 +5,7 @@
         "rootDir": "./src",
         "sourceMap": true,
         "declaration": true,
-        // "strictNullChecks": true
+        "strictNullChecks": true,
+        "noUncheckedIndexedAccess": true
     }
 }
