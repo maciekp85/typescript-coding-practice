@@ -8,7 +8,6 @@ class Employee extends Person {
 
     constructor(public readonly id: string, public name: string, private dept: string, city: string) {
         super(id, name, city);
-        this.city = city;
     }
 
     writeDept(): void {
