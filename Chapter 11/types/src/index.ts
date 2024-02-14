@@ -1,7 +1,13 @@
-class Person {
+abstract class Person {
     constructor(public id: string, public name: string, public city: string) {
 
     }
+
+    getDetails(): string {
+        return `${this.name}, ${this.getSpecificDetails()}`;
+    }
+
+    abstract getSpecificDetails(): string;
 }
 
 class Employee extends Person {
@@ -10,8 +16,8 @@ class Employee extends Person {
         super(id, name, city);
     }
 
-    writeDept(): void {
-        console.log(`${this.name} works in ${this.dept}`);
+    getSpecificDetails(): string {
+        return `works in ${this.dept}`;
     }
 }
 
@@ -20,12 +26,20 @@ class Customer extends Person {
     constructor(public readonly id: string, public name: string, public city: string, public creditLimit: number) {
         super(id, name, city);
     }
+
+    getSpecificDetails(): string {
+        return `has ${this.creditLimit} limit`;
+    }
 }
 
 class Supplier extends Person {
 
     constructor(public readonly id: string, public name: string, public city: string, public companyName: string) {
         super(id, name, city);
+    }
+    
+    getSpecificDetails(): string {
+        return `works for ${this.companyName}`;
     }
 }
 
@@ -34,13 +48,4 @@ let data : Person[] = [new Employee("fvega", "Fidel Vega", "Sales", "Paris"), ne
 
 data.push(new Supplier("dpeters", "Dora Peters", "New York", "Acme"));
 
-data.forEach(item => {
-    console.log(`Person: ${item.name}, ${item.city}`);
-    if (item instanceof Employee) {
-        item.writeDept();
-    } else if (item instanceof Customer) {
-        console.log(`Customer ${item.name} has ${item.creditLimit} limit`);
-    } else if (item instanceof Supplier) {
-        console.log(`Customer ${item.name} works for ${item.companyName}`);
-    }
-})
+data.forEach(item => console.log(item.getDetails()));
