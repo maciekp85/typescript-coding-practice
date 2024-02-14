@@ -1,8 +1,3 @@
-interface Person {
-    name: string;
-    getDetails(): string;
-}
-
 interface Product {
     name: string;
     price: number;
@@ -25,7 +20,5 @@ let group = new ProductGroup(["shoes", new SportsProduct("Shoes", "Running", 90.
 group.hat = new SportsProduct("Hat", "Skiing", 20);
 Object.keys(group).forEach(k => console.log(`Property Name: ${k} `));
 
-if (group.hat && group.boots) {
-    let total = group.hat.price + group.boots.price;
-    console.log(`Total: ${total}`);
-}
+let total = group.hat.price + (group.boots?.price ?? 0);
+console.log(`Total: ${total}`);
