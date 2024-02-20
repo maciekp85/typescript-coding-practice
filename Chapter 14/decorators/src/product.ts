@@ -1,6 +1,7 @@
 import { time } from "./methodDecorator.js";
 import { serialize } from "./classDecorator.js";
 import { double } from "./fieldDecorator.js";
+import { log } from "./accessorDecorator.js";
 
 @serialize
 export class Product {
@@ -18,5 +19,15 @@ export class Product {
     @time
     getPrice(): number {
         return this.price * (1 + (this.taxRate/100));
+    }
+
+    @log
+    get tax() {
+        return this.taxRate;
+    }
+
+    @log
+    set tax(newValue) {
+        this.taxRate = newValue;
     }
 }
