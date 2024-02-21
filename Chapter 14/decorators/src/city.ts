@@ -4,7 +4,7 @@ export class City {
 
     constructor(public name: string, public population: number) {}
 
-    @time
+    @time()
     getSummary(): string {
         return `Name: ${this.name}, Population: ${this.population}`;
     }
