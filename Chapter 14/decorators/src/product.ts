@@ -12,12 +12,17 @@ export class Product {
     
     constructor(public name: string, public price: number) {}
 
-    @time("Product.getDetails")
+    @time({
+        replacement: () => "Hello, Decorator"
+    })
     getDetails(): string {
         return `Name: ${this.name}, Price: $${this.getPrice()}`;
     }
 
-    @time()
+    @time({
+        label: "Product.price",
+        time: true
+    })
     getPrice(): number {
         return this.price * (1 + (this.tax/100));
     }
