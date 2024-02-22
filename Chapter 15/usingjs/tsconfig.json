@@ -6,8 +6,8 @@
         "sourceMap": true,
         "declaration": true,
         "module": "Node16",
-        "allowJs": true,
-        "checkJs": true,
+        // "allowJs": true,
+        // "checkJs": true,
         // "baseUrl": ".",
         // "paths": {
         //     "*": ["types/*.d.cts", "types/*.d.mts", "types/*.d.ts"]
