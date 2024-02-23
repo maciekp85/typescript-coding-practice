@@ -15,6 +15,6 @@ export function createElement(tag: any, props: Object, ...children: Object[]): H
 
 declare global {
     namespace JSX {
-        interface ElementAttributeProperty { props; }
+        interface ElementAttributesProperty { props; }
     }
 }
