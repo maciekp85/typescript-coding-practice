@@ -1,0 +1,21 @@
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+
+@Component({
+    selector: "category-list",
+    templateUrl: "./categoryList.component.html"
+})
+export class categoryList {
+
+    @Input()
+    selected: string = "";
+
+    @Input()
+    categories: string[] = [];
+
+    @Output()
+    selectCategory = new EventEmitter<string>();
+
+    getBtnClass(category: string): string {
+        return "btn btn-block" + (category === this.selected ? "btn-primary" : "btn-secondary");
+    }
+}
