@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
     selector: "category-list",
     templateUrl: "./categoryList.component.html"
 })
-export class categoryList {
+export class CategoryList {
 
     @Input()
     selected: string = "";
@@ -16,6 +16,6 @@ export class categoryList {
     selectCategory = new EventEmitter<string>();
 
     getBtnClass(category: string): string {
-        return "btn btn-block" + (category === this.selected ? "btn-primary" : "btn-secondary");
+        return "btn btn-block " + (category === this.selected ? "btn-primary" : "btn-secondary");
     }
 }
