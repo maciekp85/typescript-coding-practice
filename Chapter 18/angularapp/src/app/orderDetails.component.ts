@@ -5,7 +5,7 @@ import { DataSource } from "./data/datasource";
 
 @Component({
     selector: "order-details",
-    templateUrl: "./orderDetails.component.ts"
+    templateUrl: "./orderDetails.component.html"
 })
 export class OrderDetails {
     
