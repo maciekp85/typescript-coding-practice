@@ -2,6 +2,7 @@ import React, { FunctionComponent, useMemo } from 'react';
 import { Product } from "./data/entities";
 import { ProductList } from './productList';
 import { useAppDispatch, useAppSelector, reducers, queries } from './data/dataStore';
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // let testData: Product[] = [1, 2, 3, 4, 5].map(num => ({ id: num, name: `Prod${num}`, category: `Cat${num % 2}`, description: `Product ${num}`, price: 1000}))
 
@@ -18,7 +19,13 @@ export const App: FunctionComponent = () => {
   }, [data]);
 
   return <div className='App'>
-      <ProductList products={data ?? []} categories={categories} selections={selections} addToOrder={addToOrder} />
+      <Routes>
+        <Route path="/products" element={
+          <ProductList products={data ?? []} categories={categories} selections={selections} addToOrder={addToOrder} />
+        }/>
+        <Route path='/' element= { <Navigate replace to="/products" />
+        } /> 
+        </Routes>
   </div>
 }
 
