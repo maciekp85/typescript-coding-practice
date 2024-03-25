@@ -2,7 +2,10 @@ import React, { FunctionComponent, useMemo } from 'react';
 import { Product } from "./data/entities";
 import { ProductList } from './productList';
 import { useAppDispatch, useAppSelector, reducers, queries } from './data/dataStore';
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Summary } from './summary';
+import { OrderDetails } from './orderDetails';
+import { resetSelections } from './data/selectionSlice';
 
 // let testData: Product[] = [1, 2, 3, 4, 5].map(num => ({ id: num, name: `Prod${num}`, category: `Cat${num % 2}`, description: `Product ${num}`, price: 1000}))
 
@@ -18,11 +21,24 @@ export const App: FunctionComponent = () => {
     return [...new Set(data?.map(p => p.category))]
   }, [data]);
 
+  const [storeOrder] = reducers.useStoreOrderMutation();
+  const navigate = useNavigate();
+  const submitCallback = () => {
+    storeOrder(selections).unwrap().then(id => {
+      dispatch(resetSelections());
+      navigate(`/summary/${id}`);
+    })
+  }
+
   return <div className='App'>
       <Routes>
         <Route path="/products" element={
           <ProductList products={data ?? []} categories={categories} selections={selections} addToOrder={addToOrder} />
         }/>
+        <Route path="/order" element = {
+          <OrderDetails selections={selections} submitCallback={() => submitCallback()} />
+        } />
+        <Route path="/summary/:id" element={<Summary />} />
         <Route path='/' element= { <Navigate replace to="/products" />
         } /> 
         </Routes>
