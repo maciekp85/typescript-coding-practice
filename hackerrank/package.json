@@ -1,0 +1,17 @@
+{
+    "name": "primer",
+    "version": "1.0.0",
+    "description": "Subproject with solutions of challenges from HackerRank",
+    "main": "plusMinus.js",
+    "scripts": {
+        "start": "tsc-watch --onsuccess \"node dist/preparation/week1/challenge1/plusMinus.js\""
+    },
+    "keywords": [],
+    "author": "Maciej Piotrowski",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.11.30",
+        "tsc-watch": "^6.0.0",
+        "typescript": "^5.0.2"
+    }
+}
