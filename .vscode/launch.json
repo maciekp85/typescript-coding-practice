@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch JavaScript Training",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\hackerrank\\src\\preparation\\week1\\training\\javascript\\arrays.js"
+        },
+        {
             "name": "Launch Chapter 07",
             "program": "${workspaceFolder}/Chapter 07/types/dist/index.js",
             "request": "launch",
