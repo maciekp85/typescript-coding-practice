@@ -1,9 +1,11 @@
 // Euclidean Algorithm
-// Finding greatest common divisor (GCD)
+// Finding greatest common divisor (GCD) - version with division
 import * as readline from 'node:readline/promises';
 import {stdin as input, stdout as output} from "node:process";
 
-const rl = readline.createInterface({input, output});
+const rl = readline.createInterface({
+    input, output
+});
 
 let a;
 let b;
@@ -55,3 +57,5 @@ printGCD1(a, b);
 printGCD2(a, b);
 
 rl.close();
+
+
